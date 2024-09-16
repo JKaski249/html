@@ -29,7 +29,9 @@ function makePlotly( x, y){
   var plotDiv = document.getElementById("plot");
   var traces = [{
     x: x, 
-    y: y
+    y: y,
+    mode: 'markers',
+    type: 'scatter'
   }];
 
   Plotly.newPlot('myDiv', traces, 

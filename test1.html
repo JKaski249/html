@@ -21,11 +21,11 @@ function processData(allRows) {
     x.push( row['x'] );
     y.push( row['y'] );
   }
-  console.log( 'X',x, 'Y',y, 'SD',standard_deviation );
-  makePlotly( x, y, standard_deviation );
+  console.log( 'X',x, 'Y',y );
+  makePlotly( x, y );
 }
 
-function makePlotly( x, y, standard_deviation ){
+function makePlotly( x, y ){
   var plotDiv = document.getElementById("plot");
   var traces = [{
     x: x, 

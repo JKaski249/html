@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+  <div id="myDiv" style="width: 50%; height: 750px;"></div>
+
+<script>
+
+function makeplot() {
+  Plotly.d3.csv("https://raw.githubusercontent.com/JKaski249/Test/main/data2.csv", function(data){ processData(data) } );
+};
+  
+function processData(allRows) {
+  console.log(allRows);
+  var x = [], y = [];
+  for (var i=0; i<allRows.length; i++) {
+    row = allRows[i];
+    x.push( row['x'] );
+    y.push( row['y'] );
+  }
+  console.log( 'X',x, 'Y',y );
+  makePlotly( x, y );
+}
+
+function makePlotly( x, y ){
+  var plotDiv = document.getElementById("plot");
+  var traces = [{
+    x: x, 
+    y: y
+  }];
+
+  Plotly.newPlot('myDiv', traces, 
+    {title: 'Double pendulum - Cartesian coordinates'});
+};
+  makeplot();
+
+</script>
+</body>
+</html>

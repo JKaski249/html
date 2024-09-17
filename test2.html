@@ -5,7 +5,7 @@
 </head>
 
 <body>
-  <div id="myDiv" style="width: 500px; height: 500px;"></div>
+  <div id="myDiv" style="width: 55%; height: 700px;"></div>
 
 <script>
 
@@ -22,7 +22,7 @@ function processData(allRows) {
     y.push( row['y'] );
     z.push( row['z'] );
   }
-  console.log( 'X',x, 'Y',y, 'z',z );
+  console.log( 'X',x, 'Y',y, 'Z',z );
   makePlotly( x, y, z );
 }
 
